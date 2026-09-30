@@ -11,11 +11,12 @@ let currentImage = 0;
 /* Create the dots */
 
 images.forEach((image, index) => {
-
     const dot = document.createElement("div");
-
     dot.classList.add("carousel-dot");
-
+    
+    // Add the thumbnail image
+    dot.style.backgroundImage = `url('${image.src}')`;
+    
     if (index === 0) {
         dot.classList.add("active");
     }
@@ -25,7 +26,6 @@ images.forEach((image, index) => {
     });
 
     dotsContainer.appendChild(dot);
-
 });
 
 
