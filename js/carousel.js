@@ -1,8 +1,7 @@
 const images = document.querySelectorAll(".carousel-image");
 
-const previousButton = document.querySelector(".previous");
-const nextButton = document.querySelector(".next");
-
+const previousButton = document.querySelector(".carousel-button.previous");
+const nextButton = document.querySelector(".carousel-button.next");
 const dotsContainer = document.querySelector(".carousel-dots");
 
 let currentImage = 0;
