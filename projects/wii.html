@@ -1,593 +1,209 @@
-/* =========================
-   PROJECT PAGE
-========================= */
+<!DOCTYPE html>
+<html lang="en">
 
-.project-header {
-    padding-top: 180px;
-    padding-bottom: 50px;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.project-header h1 {
-    font-size: clamp(50px, 8vw, 90px);
-    line-height: 1;
-    letter-spacing: -3px;
-}
+    <title>PC kit-ish build</title>
 
-.project-intro {
-    max-width: 650px;
-    margin-top: 25px;
+    <!-- ../ means "go up one folder" -->
+    <link rel="stylesheet" href="../style.css">
+</head>
 
-    color: #aeb7c2;
-    font-size: 20px;
-}
+<body>
 
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">DECLAN</a>
 
-/* =========================
-   CAROUSEL
-========================= */
+            <div class="nav-links">
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
 
-.project-gallery {
-    max-width: 1200px;
-    padding-top: 20px;
-}
 
+    <main>
 
-.carousel {
-    position: relative;
+        <!-- Project Header -->
+        <section class="project-header">
 
-    width: 100%;
-    height: 600px;
+            <p class="eyebrow">HARDWARE • 2026</p>
 
-    background: #121820;
-    border: 1px solid #202832;
-    border-radius: 12px;
+            <h1>Putting the PC case together</h1>
 
-    overflow: hidden;
+            <p class="project-intro">
+                A custom PC that I built with compnents from Ebay and Amazon while the case was not custom made.
+            </p>
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        </section>
 
 
-.carousel-images {
-    width: 100%;
-    height: 100%;
+        <!-- Image Carousel -->
+        <section class="project-gallery">
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+            <div class="carousel">
 
+                <button class="carousel-button previous">
+                    ‹
+                </button>
 
-.carousel-image {
-    display: none;
+                <div class="carousel-images">
 
-    width: 100%;
-    height: 100%;
+                    <img
+                        src="../images/project2/img1.png"
+                        class="carousel-image active"
+                        alt="Custom PC build"
+                    >
 
-    object-fit: contain;
-}
+                    <img
+                        src="../images/project2/img2.png"
+                        class="carousel-image"
+                        alt="PC components"
+                    >
 
+                    <img
+                        src="../images/project1/3.jpg"
+                        class="carousel-image"
+                        alt="PC during assembly"
+                    >
 
-.carousel-image.active {
-    display: block;
-}
+                    <img
+                        src="../images/project1/4.jpg"
+                        class="carousel-image"
+                        alt="Finished PC"
+                    >
 
+                </div>
 
-/* Arrow buttons */
+                <button class="carousel-button next">
+                    ›
+                </button>
 
-.carousel-button {
-    position: absolute;
+            </div>
 
-    top: 50%;
-    transform: translateY(-50%);
 
-    z-index: 10;
+            <!-- Carousel indicators -->
+            <div class="carousel-dots"></div>
 
-    width: 50px;
-    height: 50px;
+        </section>
 
-    border: 1px solid #303a45;
-    border-radius: 50%;
 
-    background: rgba(11, 15, 20, 0.8);
+        <!-- Project Information -->
+        <section class="project-details">
 
-    color: white;
+            <div class="project-description">
 
-    font-size: 32px;
+                <p class="eyebrow">ABOUT THE PROJECT</p>
 
-    cursor: pointer;
+                <h2>Building the Computer</h2>
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+                <p>
+                    I wanted to build a computer that I could use for
+                    gaming, programming, and other projects. I selected
+                    the components, assembled the system, installed the
+                    software, and configured everything myself.
+                </p>
 
-    transition: 0.2s;
-}
+            </div>
 
 
-.carousel-button:hover {
-    background: #4cc9f0;
-    color: #071018;
-}
+            <aside class="project-specs">
 
+                <p class="eyebrow">PROJECT INFO</p>
 
-.previous {
-    left: 20px;
-}
+                <div class="spec">
+                    <span>YEAR</span>
+                    <strong>2025</strong>
+                </div>
 
+                <div class="spec">
+                    <span>TYPE</span>
+                    <strong>Hardware</strong>
+                </div>
 
-.next {
-    right: 20px;
-}
+                <div class="spec">
+                    <span>STATUS</span>
+                    <strong>Completed</strong>
+                </div>
 
+            </aside>
 
-/* Dots */
+        </section>
 
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
-    width: 100%;
-}
 
-.carousel-dot {
-    width: 70px;
-    height: 70px;
-    border: 2px solid #303a45;
-    border-radius: 6px;
-    cursor: pointer;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: all 0.2s ease;
-    opacity: 0.6;
-    padding: 0;
-}
+        <!-- Build Process -->
+        <section class="project-process">
 
-.carousel-dot.active {
-    border-color: #4cc9f0;
-    box-shadow: 0 0 0 2px rgba(76, 201, 240, 0.25);
-    opacity: 1;
-}
+            <p class="eyebrow">THE PROCESS</p>
 
-.carousel-dot:hover {
-    border-color: #4cc9f0;
-    opacity: 1;
-}
+            <h2>How I Built It</h2>
 
-/* =========================
-   PROJECT DETAILS
-========================= */
 
-.project-details {
-    display: grid;
+            <div class="process-step">
 
-    grid-template-columns: 2fr 1fr;
+                <span>01</span>
 
-    gap: 80px;
+                <div>
+                    <h3>Planning</h3>
 
-    align-items: start;
-}
+                    <p>
+                        I researched the components and figured out
+                        what hardware would work together.
+                    </p>
+                </div>
 
+            </div>
 
-.project-description h2,
-.project-process h2 {
-    font-size: 45px;
 
-    margin-bottom: 25px;
-}
+            <div class="process-step">
 
+                <span>02</span>
 
-.project-description > p:last-child {
-    color: #aeb7c2;
+                <div>
+                    <h3>Assembly</h3>
 
-    font-size: 18px;
+                    <p>
+                        I assembled the components and connected
+                        everything together.
+                    </p>
+                </div>
 
-    max-width: 700px;
-}
+            </div>
 
 
-/* Project information */
+            <div class="process-step">
 
-.project-specs {
-    background: #121820;
+                <span>03</span>
 
-    border: 1px solid #202832;
+                <div>
+                    <h3>Testing</h3>
 
-    border-radius: 12px;
+                    <p>
+                        I tested the system and fixed the problems
+                        I encountered during setup.
+                    </p>
+                </div>
 
-    padding: 30px;
-}
+            </div>
 
+        </section>
 
-.spec {
-    display: flex;
+    </main>
 
-    justify-content: space-between;
 
-    padding: 18px 0;
+    <footer>
+        <p>© 2026 Declan. Built from scratch.</p>
+    </footer>
 
-    border-bottom: 1px solid #202832;
-}
 
+    <!-- Carousel JavaScript -->
+    <script src="../js/carousel.js"></script>
 
-.spec:last-child {
-    border-bottom: none;
-}
-
-
-.spec span {
-    color: #66717d;
-
-    font-size: 12px;
-
-    letter-spacing: 2px;
-}
-
-
-.spec strong {
-    color: white;
-}
-
-
-/* =========================
-   PROCESS
-========================= */
-
-.project-process {
-    max-width: 900px;
-
-    margin-left: max(30px, calc((100vw - 1200px) / 2));
-}
-
-
-.process-step {
-    display: grid;
-
-    grid-template-columns: 70px 1fr;
-
-    gap: 30px;
-
-    padding: 35px 0;
-
-    border-top: 1px solid #202832;
-}
-
-
-.process-step > span {
-    color: #4cc9f0;
-
-    font-size: 14px;
-
-    font-weight: bold;
-}
-
-
-.process-step h3 {
-    font-size: 25px;
-
-    margin-bottom: 8px;
-}
-
-
-.process-step p {
-    color: #8e99a6;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 800px) {
-
-    .carousel {
-        height: 400px;
-    }
-
-    .project-details {
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-    }
-
-    .project-header h1 {
-        letter-spacing: -2px;
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>
+```
