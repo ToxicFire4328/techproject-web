@@ -1,74 +1,51 @@
 const images = document.querySelectorAll(".carousel-image");
-
 const previousButton = document.querySelector(".carousel-button.previous");
 const nextButton = document.querySelector(".carousel-button.next");
 const dotsContainer = document.querySelector(".carousel-dots");
 
-let currentImage = 0;
+if (!images.length || !previousButton || !nextButton || !dotsContainer) {
+    console.warn("Carousel not initialized");
+} else {
+    let currentImage = 0;
 
+    images.forEach((image, index) => {
+        const dot = document.createElement("div");
+        dot.classList.add("carousel-dot");
 
-/* Create the dots */
+        dot.style.backgroundImage = `url('${image.src}')`;
 
-images.forEach((image, index) => {
-    const dot = document.createElement("div");
-    dot.classList.add("carousel-dot");
-    
-    // Add the thumbnail image
-    dot.style.backgroundImage = `url('${image.src}')`;
-    
-    if (index === 0) {
-        dot.classList.add("active");
-    }
+        if (index === 0) {
+            dot.classList.add("active");
+        }
 
-    dot.addEventListener("click", () => {
-        showImage(index);
+        dot.addEventListener("click", () => {
+            showImage(index);
+        });
+
+        dotsContainer.appendChild(dot);
     });
 
-    dotsContainer.appendChild(dot);
-});
+    const dots = document.querySelectorAll(".carousel-dot");
 
+    function showImage(index) {
+        if (index < 0 || index >= images.length) {
+            return;
+        }
 
-const dots = document.querySelectorAll(".carousel-dot");
+        images[currentImage].classList.remove("active");
+        dots[currentImage].classList.remove("active");
 
+        currentImage = index;
 
-/* Show an image */
+        images[currentImage].classList.add("active");
+        dots[currentImage].classList.add("active");
+    }
 
-function showImage(index) {
+    nextButton.addEventListener("click", () => {
+        showImage((currentImage + 1) % images.length);
+    });
 
-    images[currentImage].classList.remove("active");
-    dots[currentImage].classList.remove("active");
-
-    currentImage = index;
-
-    images[currentImage].classList.add("active");
-    dots[currentImage].classList.add("active");
+    previousButton.addEventListener("click", () => {
+        showImage((currentImage - 1 + images.length) % images.length);
+    });
 }
-
-
-/* Next */
-
-nextButton.addEventListener("click", () => {
-
-    let nextImage = currentImage + 1;
-
-    if (nextImage >= images.length) {
-        nextImage = 0;
-    }
-
-    showImage(nextImage);
-});
-
-
-/* Previous */
-
-previousButton.addEventListener("click", () => {
-
-    let previousImage = currentImage - 1;
-
-    if (previousImage < 0) {
-        previousImage = images.length - 1;
-    }
-
-    showImage(previousImage);
-});
-```
